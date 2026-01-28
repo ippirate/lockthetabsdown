@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Tab Locker",
+  "name": "Lock the Tabs down",
   "version": "1.0",
   "description": "Blocks any new tabs or popups when lock mode is enabled.",
   "permissions": ["tabs", "storage"],
@@ -11,3 +11,4 @@
     "default_popup": "popup.html"
   }
 }
+
