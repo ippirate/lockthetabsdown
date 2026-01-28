@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Tab Locker",
+  "version": "1.0",
+  "description": "Blocks any new tabs or popups when lock mode is enabled.",
+  "permissions": ["tabs", "storage"],
+  "background": {
+    "service_worker": "service_worker.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
