@@ -1,3 +1,5 @@
+let activeTabId = null;
+let activeStartTime = null;
 chrome.tabs.onCreated.addListener((tab) => {
   chrome.storage.local.get(["lockMode", "allowedTabs"], (data) => {
     if (!data.lockMode) return;
@@ -7,6 +9,21 @@ chrome.tabs.onCreated.addListener((tab) => {
     }
   });
 });
+
+chrome.tabs.onActivated.addListener(({ tabId }) => {
+  chrome.storage.local.get("lockMode", (data) => {
+    if (!data.lockMode) return;
+
+      activeTabId = tab.id;
+     activeStartTime = Date.now();
+      
+    });
+  });
+
+function getActiveTabTime(){
+  if (!activeStartTime) return;
+  return Date.now() - activeStartTime;
+}
 
 chrome.windows.onCreated.addListener((window) => {
   chrome.storage.local.get("lockMode", (data) => {
