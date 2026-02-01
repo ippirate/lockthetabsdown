@@ -10,7 +10,7 @@ chrome.tabs.onCreated.addListener((tab) => {
   });
 });
 
-chrome.tabs.onActivated.addListener(({ tabId }) => {
+chrome.tabs.onActivated.addListener((tab) => {
   chrome.storage.local.get("lockMode", (data) => {
     if (!data.lockMode) return;
 
@@ -32,3 +32,4 @@ chrome.windows.onCreated.addListener((window) => {
     }
   });
 });
+
